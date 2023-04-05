@@ -1,0 +1,26 @@
+--cpu Cortex-M0
+"f0_rov_slavemani\startup_stm32f030x6.o"
+"f0_rov_slavemani\main.o"
+"f0_rov_slavemani\stm32f0xx_it.o"
+"f0_rov_slavemani\stm32f0xx_hal_msp.o"
+"f0_rov_slavemani\stm32f0xx_hal_tim.o"
+"f0_rov_slavemani\stm32f0xx_hal_tim_ex.o"
+"f0_rov_slavemani\stm32f0xx_hal_uart.o"
+"f0_rov_slavemani\stm32f0xx_hal_uart_ex.o"
+"f0_rov_slavemani\stm32f0xx_hal_rcc.o"
+"f0_rov_slavemani\stm32f0xx_hal_rcc_ex.o"
+"f0_rov_slavemani\stm32f0xx_hal.o"
+"f0_rov_slavemani\stm32f0xx_hal_i2c.o"
+"f0_rov_slavemani\stm32f0xx_hal_i2c_ex.o"
+"f0_rov_slavemani\stm32f0xx_hal_gpio.o"
+"f0_rov_slavemani\stm32f0xx_hal_dma.o"
+"f0_rov_slavemani\stm32f0xx_hal_cortex.o"
+"f0_rov_slavemani\stm32f0xx_hal_pwr.o"
+"f0_rov_slavemani\stm32f0xx_hal_pwr_ex.o"
+"f0_rov_slavemani\stm32f0xx_hal_flash.o"
+"f0_rov_slavemani\stm32f0xx_hal_flash_ex.o"
+"f0_rov_slavemani\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "f0_rov_slavemani\f0_rov_slavemani.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "f0_rov_slavemani.map" -o f0_rov_slavemani\f0_rov_slavemani.axf

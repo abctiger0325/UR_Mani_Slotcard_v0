@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=P2 Old Footprint=XH2.54-8pin_SMD New Footprint=XH2.54-4pin_SMD
+Change Component Comment : Designator=P2 Old Comment=8Pin New Comment=4Pin

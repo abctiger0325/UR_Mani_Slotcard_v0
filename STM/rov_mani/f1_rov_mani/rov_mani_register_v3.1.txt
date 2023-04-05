@@ -1,0 +1,87 @@
+Register Map:
+
+Register List				Address
+	Mosfet_1				0x81
+	Mosfet_2				0x82
+	Motor_1_speed			0x83
+	Motor_2_speed			0x84
+	Motor_3_speed			0x85
+	Motor_4_speed			0x86
+	LED_light				0x87
+	Servo_1_degree			0x88
+	Servo_2_degree			0x89
+	
+	Command mode			0x8A
+
+Data send:
+	By UART:				Byte 1					Byte 2
+							0x81 - 8x89				Value
+							0x8A					(Command mode)
+							
+Command mode:
+	For motor:				Byte 1					Byte 2
+							'1' - '4'(Motor No.)	'F','B','S'(Front, Back, Stop)
+							
+	For LED:				Byte 1					Byte 	
+							'H','B'(LED No.)		'0', '1'(OFF, ON)
+							
+	For FET:				Byte 1					Byte 2
+							'F'						'0' - '9' (FET No.)
+							
+	For Magnetic:			Byte 1					Byte 2
+							'M'						'0', '1'(OFF, ON)
+Registers:
+	Mosfet_1 			(0x81):		bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			Mos_6		Mos_5		Mos_4		Mos_3		Mos_2		Mos_1		Mos_0
+						
+	Default : 	0x00
+	Meaning :	0 for trigger mode, 1 for toggle mode
+	-------------------------------------------------------------------------------------------------------------------------
+	Mosfet_2 			(0x82):		bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			N/A			N/A			N/A			Magnetic	Mos_9		Mos_8		Mos_7
+						
+	Default : 	0x08
+	Meaning :	0 for trigger mode, 1 for toggle mode
+	-------------------------------------------------------------------------------------------------------------------------
+	Motor_1_speed		 (0x83):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			|<----------------------------------Speed---------------------------------->|
+						
+	Default : 	0d100
+	Meaning :	Speed of the motor (0 to 100)
+	-------------------------------------------------------------------------------------------------------------------------
+	Motor_2_speed		 (0x84):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			|<----------------------------------Speed---------------------------------->|
+						
+	Default : 	0d100
+	Meaning :	Speed of the motor (0 to 100)
+	-------------------------------------------------------------------------------------------------------------------------
+	Motor_3_speed		 (0x85):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			|<----------------------------------Speed---------------------------------->|
+						
+	Default : 	0d100
+	Meaning :	Speed of the motor (0 to 100)
+	-------------------------------------------------------------------------------------------------------------------------
+	Motor_4_speed		 (0x86):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			|<----------------------------------Speed---------------------------------->|
+						
+	Default : 	0d100
+	Meaning :	Speed of the motor (0 to 100)
+	-------------------------------------------------------------------------------------------------------------------------
+	LED_light		 	 (0x87):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									N/A			N/A			|<----------Level---------->|		|<----------Level---------->|
+						
+	Default : 	0x1B
+	Meaning :	bit 6 to 4 indicate power level of LED_2 ,while bit 3 to 1 for LED (0 to 6)
+	-------------------------------------------------------------------------------------------------------------------------
+	Servo_1_degree	 	 (0x88):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									|<----------------------------------------Degree--------------------------------------->|
+						
+	Default : 	0d90
+	Meaning :	Degree of the servo (0 to 180)
+	-------------------------------------------------------------------------------------------------------------------------
+	Servo_2_degree	 	 (0x89):	bit 8		bit 7  		bit 6  		bit 5  		bit 4  		bit 3  		bit 2  		bit 1
+									|<----------------------------------------Degree--------------------------------------->|
+						
+	Default : 	0d90
+	Meaning :	Degree of the servo (0 to 180)
+	-------------------------------------------------------------------------------------------------------------------------

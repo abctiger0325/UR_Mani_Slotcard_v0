@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"f1_rov_mani\startup_stm32f103xb.o"
+"f1_rov_mani\main.o"
+"f1_rov_mani\stm32f1xx_it.o"
+"f1_rov_mani\stm32f1xx_hal_msp.o"
+"f1_rov_mani\system_stm32f1xx.o"
+"f1_rov_mani\stm32f1xx_hal_gpio_ex.o"
+"f1_rov_mani\stm32f1xx_hal_i2c.o"
+"f1_rov_mani\stm32f1xx_hal.o"
+"f1_rov_mani\stm32f1xx_hal_rcc.o"
+"f1_rov_mani\stm32f1xx_hal_rcc_ex.o"
+"f1_rov_mani\stm32f1xx_hal_gpio.o"
+"f1_rov_mani\stm32f1xx_hal_dma.o"
+"f1_rov_mani\stm32f1xx_hal_cortex.o"
+"f1_rov_mani\stm32f1xx_hal_pwr.o"
+"f1_rov_mani\stm32f1xx_hal_flash.o"
+"f1_rov_mani\stm32f1xx_hal_flash_ex.o"
+"f1_rov_mani\stm32f1xx_hal_exti.o"
+"f1_rov_mani\stm32f1xx_hal_tim.o"
+"f1_rov_mani\stm32f1xx_hal_tim_ex.o"
+"f1_rov_mani\stm32f1xx_hal_uart.o"
+--library_type=microlib --strict --scatter "f1_rov_mani\f1_rov_mani.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "f1_rov_mani.map" -o f1_rov_mani\f1_rov_mani.axf
